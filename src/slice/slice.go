@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	// Creating a 2D slice
 	matrix := [][]int{
 		{1, 2, 3},
 		{4, 5, 6},
