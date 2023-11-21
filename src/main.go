@@ -1,36 +1,34 @@
 package main
 
-import "fmt"
-
-type Student struct {
-	name  string
-	age   int
-	class int
-	grade int
-}
+import (
+	"fmt"
+)
 
 func main() {
-	var std1 Student
+	var std1 = make(map[string]string)
 
-	fmt.Println("Enter student name:")
-	fmt.Scanln(&std1.name)
+	std1["name"] = "Sithum"
+	std1["age"] = "25"
 
-	fmt.Println("Enter student age:")
-	fmt.Scanln(&std1.age)
+	std2 := make(map[string]int)
+	std2["grade"] = 11
+	std2["age"] = 22
 
-	fmt.Println("Enter student class:")
-	fmt.Scanln(&std1.class)
+	fmt.Printf("%v\n", std1)
+	fmt.Printf("%v\n", std2)
 
-	fmt.Println("Enter student grade:")
-	fmt.Scanln(&std1.grade)
+	fmt.Printf(std1["name"])
 
-	printStudent(std1)
+	std2["grade"] = 90 // Update element in map
+	std2["class"] = 10 // Add new element in map
+	fmt.Printf("\nUpdated Map: %v\n", std2)
 
-}
+	delete(std2, "grade") // Remove element in map
+	fmt.Printf("\nUpdated Map After Delete: %v\n", std2)
 
-func printStudent(std Student) {
-	fmt.Println("Student name: ", std.name)
-	fmt.Println("Student age: ", std.age)
-	fmt.Println("Student class: ", std.class)
-	fmt.Println("Student grade: ", std.grade)
+	val1, ok1 := std1["brand"] //Check For Specific Elements in a Map
+	val2, ok2 := std2["class"]
+	fmt.Println(val1, ok1)
+	fmt.Println(val2, ok2)
+
 }
