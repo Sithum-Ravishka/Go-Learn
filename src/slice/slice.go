@@ -51,5 +51,19 @@ func main() {
 	nums = append(nums, nums...)
 	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
 
+	nums = append(nums, nums...)
+	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
+
 	fmt.Println(nums)
+
+	letters := []string{"A", "B", "C", "D", "E", "F"}
+
+	fmt.Println(letters[4])
+	letters = append(letters[0:1], "X", "Y")
+
+	fmt.Println(letters, len(letters), cap(letters))
+
+	// fmt.Println(letters[4]) // index out of range
+
+	fmt.Println(letters[3:6]) //[D E F]
 }
