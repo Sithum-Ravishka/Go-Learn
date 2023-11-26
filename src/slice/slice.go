@@ -24,4 +24,32 @@ func main() {
 
 	fmt.Printf("Array, Size bytes %d \n", unsafe.Sizeof(k))
 	fmt.Printf("Slice, Size bytes %d \n", unsafe.Sizeof(j))
+
+	var nums []int
+	fmt.Printf("%#v\n", nums)
+
+	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
+
+	nums = append(nums, 1, 2)
+	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
+
+	nums = append(nums, 3)
+	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
+
+	nums = append(nums, 4)
+	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
+
+	nums = append(nums, 100)
+	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
+
+	nums = append(nums[0:4], 200, 300, 400, 500, 600)
+	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
+
+	nums = append(nums, 200, 300, 400, 500, 600, 300, 400, 900)
+	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
+
+	nums = append(nums, nums...)
+	fmt.Printf("Length: %d, Capacity: %d \n", len(nums), cap(nums))
+
+	fmt.Println(nums)
 }
