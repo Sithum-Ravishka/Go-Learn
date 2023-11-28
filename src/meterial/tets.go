@@ -5,8 +5,6 @@
 //     Multihash: SHA-256 hash
 //     Multibase: Base58btc encoding
 
-
-
 // Large Chunks:
 
 //     Advantages: Reduced overhead in terms of metadata and processing time.
